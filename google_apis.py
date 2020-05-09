@@ -76,7 +76,7 @@ def get_emails_ids_from_sheet(credentials):
     )
 
     values = result.get("values", [])
-    return [value[0] for value in values]
+    return [value[0] if value else "" for value in values]
 
 
 def update_sheet(rows, credentials):

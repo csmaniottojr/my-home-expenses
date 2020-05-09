@@ -91,5 +91,5 @@ def get_expenses_from_email():
     google_apis.update_sheet(rows, credentials)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     get_expenses_from_email()

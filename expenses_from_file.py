@@ -19,12 +19,12 @@ def read_file(path, expected_mimetype):
 def format_file_name(path):
     basename = os.path.basename(path)
     now = datetime.now().isoformat()
-    return f'{now} - {basename}'
+    return f"{now} - {basename}"
 
 
 @click.command()
-@click.option('-e', '--expense', help='Identificador da despesa. Ex: Fatura da Claro')
-@click.option('-f', '--file', help='Arquivo pdf do boleto', type=click.Path())
+@click.option("-e", "--expense", help="Identificador da despesa. Ex: Fatura da Claro")
+@click.option("-f", "--file", help="Arquivo pdf do boleto", type=click.Path())
 def get_expenses_from_file(expense, file):
     expected_mimetype = "application/pdf"
     file_content = read_file(file, expected_mimetype)
@@ -41,5 +41,5 @@ def get_expenses_from_file(expense, file):
     google_apis.update_sheet([row], credentials)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     get_expenses_from_file()

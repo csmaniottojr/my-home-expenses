@@ -2,7 +2,6 @@ from collections import namedtuple
 
 import date_utils
 
-
 DespesaRow = namedtuple("DespesaRow", "tipo data_recebimento link_pdf email_id")
 
 
